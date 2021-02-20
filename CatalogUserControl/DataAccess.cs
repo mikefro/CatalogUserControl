@@ -12,15 +12,15 @@ namespace CatalogUserControl
     public class DataAccess
     {
 
-        //Methods to get data from database with stored procedures.
-        public static ProductModel GetProductModel(int productModelId)
+        //Methods to get ProductModel by a integer
+        public ProductModel GetProductModel(int productModelId)
         {
-            string sql = $"SELECT ProductModel.ProductModelID, ProductModel.Name,ProductPHoto.ThumbNailPhoto,ProductPhoto.ThumbnailPhotoFileName,"  +
-                            "ProductPHoto.LargePhoto, ProductPhoto.LargePhotoFileName" +
-                            "JOIN Production.Product on ProductionModel.ProductModelID = Product.ProductmodelID" +
-                            "JOIN Production.ProductProductPhoto on Product.ProductID = ProductPhoto.ProductID" + 
-                            "JOIN Production.ProductPhoto on ProductProductPhoto.ProductPhotoID = ProductPhoto.ProductPhotoID" +
-                            "WHERE product.productmodelId = {productModelId}";
+            string sql = $"SELECT DISTINCT ProductModel.ProductModelID, ProductModel.Name, ProductPhoto.LargePhoto, Product.ListPrice "
+                                + $"FROM Production.ProductModel "
+                                + $"JOIN Production.Product ON ProductModel.ProductModelID = Product.ProductModelID "
+                                + $"JOIN Production.ProductProductPhoto ON Product.ProductID = ProductProductPhoto.ProductID "
+                                + $"JOIN Production.ProductPhoto ON ProductProductPhoto.ProductPhotoID = ProductPhoto.ProductPhotoID "
+                                + $"WHERE Product.ProductModelID = {productModelId}";
             using (IDbConnection connection = new SqlConnection(Helper.CnnVal("AdventureWorks2016")))
             {
                 ProductModel productModel = connection.Query<ProductModel>(sql).FirstOrDefault();
@@ -28,7 +28,35 @@ namespace CatalogUserControl
             }
         }
 
-  
+
+        public List<Product> GetProducts(int productModelId)
+        {
+            List<Product> products;
+            string sql = $"SELECT ProductId, Size,Color FROM Production.Product" +
+                            $"WHERE Product.ProductModelID = {productModelId}";
+
+            using (IDbConnection connection = new SqlConnection(Helper.CnnVal("AdventureWorks2016")))
+            { 
+                products = connection.Query<Product>(sql).ToList();
+             }
+                return products;
+            }
+        
+
+        public List<Product> getAllProducts()
+        {
+            string sql = "SELECT Product.ProductModelID "
+                            + "FROM Production.Product "  
+                            + "WHERE ProductModelID IS NOT NULL";
+
+            using (IDbConnection connection = new SqlConnection(Helper.CnnVal("AdventureWorks2016")))
+            {
+                List<Product> products = connection.Query<Product>(sql).ToList();
+                return products;
+            }
+        }
+
+
     }
 }
             
