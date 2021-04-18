@@ -12,14 +12,18 @@ namespace CatalogUserControl
         public string Name { get; set; }
         public byte[] LargePhoto { get; set; }
         public float ListPrice { get; set; }
-        public List<Product> SizesAndColorsProduct { get; set; }
+        public List<ProductSizes> Sizes { get; set; }
+        public List<ProductColors> Colors { get; set; }
 
     }
 
-    public class Product
+    public class ProductSizes : Product
     {
-        public int ProductId { get; set; }
         public string Size { get; set; }
+    }
+
+    public class ProductColors : Product
+    {
         public string Color { get; set; }
     }
 }

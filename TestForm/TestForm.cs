@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CatalogUserControl
+namespace TestForm
 {
     public partial class TestForm : Form
     {

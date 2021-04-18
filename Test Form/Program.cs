@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CatalogUserControl
+namespace Test_Form
 {
     static class Program
     {
@@ -16,6 +16,7 @@ namespace CatalogUserControl
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
     }
 }

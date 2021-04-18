@@ -1,5 +1,5 @@
 ﻿
-namespace CatalogUserControl
+namespace TestForm
 {
     partial class TestForm
     {
@@ -29,22 +29,13 @@ namespace CatalogUserControl
         /// </summary>
         private void InitializeComponent()
         {
-            this.catalogProductsUC1 = new CatalogUserControl.CatalogProductsUC();
             this.SuspendLayout();
-            // 
-            // catalogProductsUC1
-            // 
-            this.catalogProductsUC1.Location = new System.Drawing.Point(42, 12);
-            this.catalogProductsUC1.Name = "catalogProductsUC1";
-            this.catalogProductsUC1.Size = new System.Drawing.Size(500, 555);
-            this.catalogProductsUC1.TabIndex = 0;
             // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 561);
-            this.Controls.Add(this.catalogProductsUC1);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "TestForm";
             this.Text = "Test Form";
             this.ResumeLayout(false);
@@ -52,8 +43,6 @@ namespace CatalogUserControl
         }
 
         #endregion
-
-        private CatalogProductsUC catalogProductsUC1;
     }
 }
 
