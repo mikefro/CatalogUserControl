@@ -26,7 +26,7 @@ Or you can go to the following link if you prefer to download and use [Catalog U
  First of all I am going to mention the distribution of its components.
  
  <p align="center">
-  <img width="508" height="428" src="https://github.com/miquelpaucasesnoves/CatalogUserControl/blob/main/ScreenShots/mainFormScreentShot.png">
+  <img width="502" height="608" src="https://github.com/miquelpaucasesnoves/CatalogUserControl/blob/main/ScreenShots/mainFormScreentShot.png">
 </p>
 
   On the main form I have differentiated the selection section of categories, subcategories and language from the product information by inserting between them the title for the product model with a larger and more noticeable font.
@@ -46,7 +46,7 @@ Or you can go to the following link if you prefer to download and use [Catalog U
 
 
  <p align="center">
-  <img width="508" height="228" src="https://github.com/miquelpaucasesnoves/CatalogUserControl/blob/main/ScreenShots/detailFormScreenShot.png">
+  <img width="387" height="366" src="https://github.com/miquelpaucasesnoves/CatalogUserControl/blob/main/ScreenShots/detailFormScreenShot.png">
 </p>
 
   I have used a vertical view, all elements are labels and textBox except the colours and size options where I have used a listview for rapid display. All Fields in the details form are read-only.
