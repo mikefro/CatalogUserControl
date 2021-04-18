@@ -52,15 +52,16 @@ namespace CatalogUserControl
             // 
             // catalogScrollBar
             // 
-            this.catalogScrollBar.Location = new System.Drawing.Point(470, 88);
+            this.catalogScrollBar.Location = new System.Drawing.Point(477, 95);
             this.catalogScrollBar.Name = "catalogScrollBar";
-            this.catalogScrollBar.Size = new System.Drawing.Size(23, 471);
+            this.catalogScrollBar.Size = new System.Drawing.Size(23, 475);
             this.catalogScrollBar.TabIndex = 1;
             this.catalogScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.catalogScrollBar_Scroll);
             // 
             // sizeFlowLayout
             // 
             this.sizeFlowLayout.AutoScroll = true;
+            this.sizeFlowLayout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sizeFlowLayout.Location = new System.Drawing.Point(10, 19);
             this.sizeFlowLayout.Name = "sizeFlowLayout";
             this.sizeFlowLayout.Size = new System.Drawing.Size(438, 66);
@@ -79,9 +80,11 @@ namespace CatalogUserControl
             // productIdLabel
             // 
             this.productIdLabel.AutoSize = true;
-            this.productIdLabel.Location = new System.Drawing.Point(19, 112);
+            this.productIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productIdLabel.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.productIdLabel.Location = new System.Drawing.Point(62, 537);
             this.productIdLabel.Name = "productIdLabel";
-            this.productIdLabel.Size = new System.Drawing.Size(35, 13);
+            this.productIdLabel.Size = new System.Drawing.Size(51, 16);
             this.productIdLabel.TabIndex = 4;
             this.productIdLabel.Text = "label1";
             // 
@@ -89,7 +92,8 @@ namespace CatalogUserControl
             // 
             this.nameProductModelLabel.AutoSize = true;
             this.nameProductModelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameProductModelLabel.Location = new System.Drawing.Point(143, 97);
+            this.nameProductModelLabel.ForeColor = System.Drawing.Color.Blue;
+            this.nameProductModelLabel.Location = new System.Drawing.Point(115, 95);
             this.nameProductModelLabel.Name = "nameProductModelLabel";
             this.nameProductModelLabel.Size = new System.Drawing.Size(92, 31);
             this.nameProductModelLabel.TabIndex = 5;
@@ -105,6 +109,8 @@ namespace CatalogUserControl
             // sizesGroupBox
             // 
             this.sizesGroupBox.Controls.Add(this.sizeFlowLayout);
+            this.sizesGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sizesGroupBox.ForeColor = System.Drawing.Color.Navy;
             this.sizesGroupBox.Location = new System.Drawing.Point(12, 326);
             this.sizesGroupBox.Name = "sizesGroupBox";
             this.sizesGroupBox.Size = new System.Drawing.Size(458, 91);
@@ -115,6 +121,8 @@ namespace CatalogUserControl
             // colorGroupBox
             // 
             this.colorGroupBox.Controls.Add(this.colorFlowLayout);
+            this.colorGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colorGroupBox.ForeColor = System.Drawing.Color.Navy;
             this.colorGroupBox.Location = new System.Drawing.Point(12, 423);
             this.colorGroupBox.Name = "colorGroupBox";
             this.colorGroupBox.Size = new System.Drawing.Size(458, 95);
@@ -125,32 +133,39 @@ namespace CatalogUserControl
             // prizeProductLabel
             // 
             this.prizeProductLabel.AutoSize = true;
-            this.prizeProductLabel.Location = new System.Drawing.Point(349, 536);
+            this.prizeProductLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prizeProductLabel.ForeColor = System.Drawing.Color.Blue;
+            this.prizeProductLabel.Location = new System.Drawing.Point(259, 530);
             this.prizeProductLabel.Name = "prizeProductLabel";
-            this.prizeProductLabel.Size = new System.Drawing.Size(35, 13);
+            this.prizeProductLabel.Size = new System.Drawing.Size(76, 25);
             this.prizeProductLabel.TabIndex = 9;
             this.prizeProductLabel.Text = "label1";
             // 
             // categoryLabel
             // 
             this.categoryLabel.AutoSize = true;
+            this.categoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoryLabel.ForeColor = System.Drawing.Color.Navy;
             this.categoryLabel.Location = new System.Drawing.Point(27, 27);
             this.categoryLabel.Name = "categoryLabel";
-            this.categoryLabel.Size = new System.Drawing.Size(49, 13);
+            this.categoryLabel.Size = new System.Drawing.Size(57, 13);
             this.categoryLabel.TabIndex = 10;
             this.categoryLabel.Text = "Category";
             // 
             // subcategoryLabel
             // 
             this.subcategoryLabel.AutoSize = true;
+            this.subcategoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subcategoryLabel.ForeColor = System.Drawing.Color.Navy;
             this.subcategoryLabel.Location = new System.Drawing.Point(9, 59);
             this.subcategoryLabel.Name = "subcategoryLabel";
-            this.subcategoryLabel.Size = new System.Drawing.Size(67, 13);
+            this.subcategoryLabel.Size = new System.Drawing.Size(78, 13);
             this.subcategoryLabel.TabIndex = 11;
             this.subcategoryLabel.Text = "Subcategory";
             // 
             // categoryComboBox
             // 
+            this.categoryComboBox.ForeColor = System.Drawing.Color.Navy;
             this.categoryComboBox.FormattingEnabled = true;
             this.categoryComboBox.Location = new System.Drawing.Point(87, 19);
             this.categoryComboBox.Name = "categoryComboBox";
@@ -160,6 +175,7 @@ namespace CatalogUserControl
             // 
             // subcategoryComboBox
             // 
+            this.subcategoryComboBox.ForeColor = System.Drawing.Color.Navy;
             this.subcategoryComboBox.FormattingEnabled = true;
             this.subcategoryComboBox.Location = new System.Drawing.Point(86, 51);
             this.subcategoryComboBox.Name = "subcategoryComboBox";
@@ -169,9 +185,11 @@ namespace CatalogUserControl
             // languageLabel
             // 
             this.languageLabel.AutoSize = true;
+            this.languageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.languageLabel.ForeColor = System.Drawing.Color.Navy;
             this.languageLabel.Location = new System.Drawing.Point(317, 27);
             this.languageLabel.Name = "languageLabel";
-            this.languageLabel.Size = new System.Drawing.Size(55, 13);
+            this.languageLabel.Size = new System.Drawing.Size(63, 13);
             this.languageLabel.TabIndex = 14;
             this.languageLabel.Text = "Language";
             // 
@@ -179,6 +197,7 @@ namespace CatalogUserControl
             // 
             this.englishRadioButton.AutoSize = true;
             this.englishRadioButton.Checked = true;
+            this.englishRadioButton.ForeColor = System.Drawing.Color.Navy;
             this.englishRadioButton.Location = new System.Drawing.Point(385, 25);
             this.englishRadioButton.Name = "englishRadioButton";
             this.englishRadioButton.Size = new System.Drawing.Size(59, 17);
@@ -190,6 +209,7 @@ namespace CatalogUserControl
             // frenchRadioButton
             // 
             this.frenchRadioButton.AutoSize = true;
+            this.frenchRadioButton.ForeColor = System.Drawing.Color.Navy;
             this.frenchRadioButton.Location = new System.Drawing.Point(385, 52);
             this.frenchRadioButton.Name = "frenchRadioButton";
             this.frenchRadioButton.Size = new System.Drawing.Size(58, 17);
@@ -201,6 +221,7 @@ namespace CatalogUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.frenchRadioButton);
             this.Controls.Add(this.englishRadioButton);
             this.Controls.Add(this.languageLabel);
@@ -216,7 +237,7 @@ namespace CatalogUserControl
             this.Controls.Add(this.productPictureBox);
             this.Controls.Add(this.catalogScrollBar);
             this.Name = "CatalogProductsUC";
-            this.Size = new System.Drawing.Size(493, 566);
+            this.Size = new System.Drawing.Size(500, 570);
             this.Load += new System.EventHandler(this.CatalogProductsUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productPictureBox)).EndInit();
             this.sizesGroupBox.ResumeLayout(false);

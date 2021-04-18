@@ -23,6 +23,9 @@ namespace CatalogUserControl
 
         String language,category,subCategory;
 
+        ToolTip toolTip1 = new ToolTip();
+
+
 
         //Method to clean the labels and FlowLayouts
         private void CleanProduct()
@@ -81,7 +84,10 @@ namespace CatalogUserControl
                     sizeButton = new Button();
                     sizeButton.Text = product.Size;
                     sizeButton.Name = product.productID.ToString();
+                    this.sizeButton.Cursor = Cursors.Hand;
                     this.sizeButton.Click += new System.EventHandler(sizeButtons_Click);
+                    this.sizeButton.Cursor = Cursors.Hand;
+                    toolTip1.SetToolTip(this.sizeButton, "Click for more details");
                     sizeFlowLayout.Controls.Add(sizeButton);
                 }
             else
@@ -90,6 +96,9 @@ namespace CatalogUserControl
                 sizeButton.Text = "Talla unica";
                 sizeButton.Name = productModel.Sizes[0].productID.ToString();
                 this.sizeButton.Click += new System.EventHandler(sizeButtons_Click);
+                this.sizeButton.Cursor = Cursors.Hand;
+                toolTip1.SetToolTip(this.sizeButton, "Click for more details");
+
                 sizeFlowLayout.Controls.Add(sizeButton);
             }
 
@@ -120,6 +129,9 @@ namespace CatalogUserControl
                         Color mycolor = ColorTranslator.FromHtml(product.Color);
                         colorButton.BackColor = mycolor;
                         this.colorButton.Click += new System.EventHandler(colorButtons_Click);
+                        this.colorButton.Cursor = Cursors.Hand;
+                        toolTip1.SetToolTip(this.colorButton, "Click for more details");
+
                         colorFlowLayout.Controls.Add(colorButton);
                     }
                 }
@@ -131,6 +143,9 @@ namespace CatalogUserControl
                 sizeButton.Text = "Sin color";
                 sizeButton.Name = productModel.Sizes[0].productID.ToString();
                 this.colorButton.Click += new System.EventHandler(colorButtons_Click);
+                this.colorButton.Cursor = Cursors.Hand;
+                toolTip1.SetToolTip(this.colorButton, "Click for more details");
+
                 sizeFlowLayout.Controls.Add(sizeButton);
 
             }
@@ -210,9 +225,6 @@ namespace CatalogUserControl
         // on pictureBox, on any sizeButton and on any colorButton
         public void configToolTips()
         {
-            // Create the ToolTip and associate with the Form container.
-            ToolTip toolTip1 = new ToolTip();
-
             // Set up the delays for the ToolTip.
             toolTip1.AutoPopDelay = 5000;
             toolTip1.InitialDelay = 1000;
@@ -221,10 +233,6 @@ namespace CatalogUserControl
 
             // Set up the ToolTip text for Controls that you want use it
             toolTip1.SetToolTip(this.productPictureBox, "Click for more details");
-            toolTip1.SetToolTip(this.sizeButton, "Click for more details");
-            toolTip1.SetToolTip(this.colorButton, "Click for more details");
-
-
         }
 
         //Method/Event to go the detailForm

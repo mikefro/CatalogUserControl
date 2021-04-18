@@ -34,16 +34,17 @@ namespace Test_Form
             // 
             // catalogProductsUC1
             // 
+            this.catalogProductsUC1.BackColor = System.Drawing.Color.White;
             this.catalogProductsUC1.Location = new System.Drawing.Point(-1, 0);
             this.catalogProductsUC1.Name = "catalogProductsUC1";
-            this.catalogProductsUC1.Size = new System.Drawing.Size(493, 559);
+            this.catalogProductsUC1.Size = new System.Drawing.Size(500, 574);
             this.catalogProductsUC1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 571);
+            this.ClientSize = new System.Drawing.Size(501, 574);
             this.Controls.Add(this.catalogProductsUC1);
             this.Name = "Form1";
             this.Text = "Form1";

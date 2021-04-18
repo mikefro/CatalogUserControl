@@ -60,12 +60,12 @@ namespace CatalogUserControl
             this.productListPriceTextBox = new System.Windows.Forms.TextBox();
             this.productStandarTextBox = new System.Windows.Forms.TextBox();
             this.photosTabPage = new System.Windows.Forms.TabPage();
+            this.addPictureButton = new System.Windows.Forms.Button();
+            this.changePictureButton = new System.Windows.Forms.Button();
+            this.selectPictureGroupBox = new System.Windows.Forms.GroupBox();
+            this.addPictureTextBox = new System.Windows.Forms.TextBox();
             this.selectPictureButton = new System.Windows.Forms.Button();
             this.productPictureBox = new System.Windows.Forms.PictureBox();
-            this.addPictureTextBox = new System.Windows.Forms.TextBox();
-            this.selectPictureGroupBox = new System.Windows.Forms.GroupBox();
-            this.changePictureButton = new System.Windows.Forms.Button();
-            this.addPictureButton = new System.Windows.Forms.Button();
             this.sizeListView = new MyListView();
             this.colorListView = new MyListView();
             this.tabControl1.SuspendLayout();
@@ -73,115 +73,139 @@ namespace CatalogUserControl
             this.styleInfoTabPage.SuspendLayout();
             this.productionTabPage.SuspendLayout();
             this.photosTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productPictureBox)).BeginInit();
             this.selectPictureGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // productIdLabel
             // 
             this.productIdLabel.AutoSize = true;
+            this.productIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productIdLabel.ForeColor = System.Drawing.Color.Blue;
             this.productIdLabel.Location = new System.Drawing.Point(27, 33);
             this.productIdLabel.Name = "productIdLabel";
-            this.productIdLabel.Size = new System.Drawing.Size(87, 13);
+            this.productIdLabel.Size = new System.Drawing.Size(102, 13);
             this.productIdLabel.TabIndex = 0;
             this.productIdLabel.Text = "ProductModel ID";
             // 
             // makeFlagLabel
             // 
             this.makeFlagLabel.AutoSize = true;
-            this.makeFlagLabel.Location = new System.Drawing.Point(284, 33);
+            this.makeFlagLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.makeFlagLabel.ForeColor = System.Drawing.Color.Blue;
+            this.makeFlagLabel.Location = new System.Drawing.Point(276, 34);
             this.makeFlagLabel.Name = "makeFlagLabel";
-            this.makeFlagLabel.Size = new System.Drawing.Size(54, 13);
+            this.makeFlagLabel.Size = new System.Drawing.Size(62, 13);
             this.makeFlagLabel.TabIndex = 2;
             this.makeFlagLabel.Text = "MakeFlag";
             // 
             // finishedGoodsFlagLabel
             // 
             this.finishedGoodsFlagLabel.AutoSize = true;
-            this.finishedGoodsFlagLabel.Location = new System.Drawing.Point(235, 76);
+            this.finishedGoodsFlagLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.finishedGoodsFlagLabel.ForeColor = System.Drawing.Color.Blue;
+            this.finishedGoodsFlagLabel.Location = new System.Drawing.Point(216, 76);
             this.finishedGoodsFlagLabel.Name = "finishedGoodsFlagLabel";
-            this.finishedGoodsFlagLabel.Size = new System.Drawing.Size(103, 13);
+            this.finishedGoodsFlagLabel.Size = new System.Drawing.Size(122, 13);
             this.finishedGoodsFlagLabel.TabIndex = 3;
             this.finishedGoodsFlagLabel.Text = "Finished Goods Flag";
             // 
             // colorLabel
             // 
             this.colorLabel.AutoSize = true;
+            this.colorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colorLabel.ForeColor = System.Drawing.Color.Blue;
             this.colorLabel.Location = new System.Drawing.Point(19, 136);
             this.colorLabel.Name = "colorLabel";
-            this.colorLabel.Size = new System.Drawing.Size(31, 13);
+            this.colorLabel.Size = new System.Drawing.Size(36, 13);
             this.colorLabel.TabIndex = 4;
             this.colorLabel.Text = "Color";
             // 
             // standardCostLabel
             // 
             this.standardCostLabel.AutoSize = true;
+            this.standardCostLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.standardCostLabel.ForeColor = System.Drawing.Color.Blue;
             this.standardCostLabel.Location = new System.Drawing.Point(27, 33);
             this.standardCostLabel.Name = "standardCostLabel";
-            this.standardCostLabel.Size = new System.Drawing.Size(74, 13);
+            this.standardCostLabel.Size = new System.Drawing.Size(87, 13);
             this.standardCostLabel.TabIndex = 5;
             this.standardCostLabel.Text = "Standard Cost";
             // 
             // reorderPointLabel
             // 
             this.reorderPointLabel.AutoSize = true;
+            this.reorderPointLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reorderPointLabel.ForeColor = System.Drawing.Color.Blue;
             this.reorderPointLabel.Location = new System.Drawing.Point(27, 202);
             this.reorderPointLabel.Name = "reorderPointLabel";
-            this.reorderPointLabel.Size = new System.Drawing.Size(72, 13);
+            this.reorderPointLabel.Size = new System.Drawing.Size(85, 13);
             this.reorderPointLabel.TabIndex = 6;
             this.reorderPointLabel.Text = "Reorder Point";
             // 
             // safetyStockLevelLabel
             // 
             this.safetyStockLevelLabel.AutoSize = true;
+            this.safetyStockLevelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.safetyStockLevelLabel.ForeColor = System.Drawing.Color.Blue;
             this.safetyStockLevelLabel.Location = new System.Drawing.Point(27, 144);
             this.safetyStockLevelLabel.Name = "safetyStockLevelLabel";
-            this.safetyStockLevelLabel.Size = new System.Drawing.Size(97, 13);
+            this.safetyStockLevelLabel.Size = new System.Drawing.Size(115, 13);
             this.safetyStockLevelLabel.TabIndex = 7;
             this.safetyStockLevelLabel.Text = "Safety Stock Level";
             // 
             // listPriceLabel
             // 
             this.listPriceLabel.AutoSize = true;
+            this.listPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listPriceLabel.ForeColor = System.Drawing.Color.Blue;
             this.listPriceLabel.Location = new System.Drawing.Point(27, 90);
             this.listPriceLabel.Name = "listPriceLabel";
-            this.listPriceLabel.Size = new System.Drawing.Size(50, 13);
+            this.listPriceLabel.Size = new System.Drawing.Size(60, 13);
             this.listPriceLabel.TabIndex = 8;
             this.listPriceLabel.Text = "List Price";
             // 
             // nameProductLabel
             // 
             this.nameProductLabel.AutoSize = true;
+            this.nameProductLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameProductLabel.ForeColor = System.Drawing.Color.Blue;
             this.nameProductLabel.Location = new System.Drawing.Point(27, 96);
             this.nameProductLabel.Name = "nameProductLabel";
-            this.nameProductLabel.Size = new System.Drawing.Size(35, 13);
+            this.nameProductLabel.Size = new System.Drawing.Size(39, 13);
             this.nameProductLabel.TabIndex = 9;
             this.nameProductLabel.Text = "Name";
             // 
             // sizeLabel
             // 
             this.sizeLabel.AutoSize = true;
+            this.sizeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sizeLabel.ForeColor = System.Drawing.Color.Blue;
             this.sizeLabel.Location = new System.Drawing.Point(201, 136);
             this.sizeLabel.Name = "sizeLabel";
-            this.sizeLabel.Size = new System.Drawing.Size(27, 13);
+            this.sizeLabel.Size = new System.Drawing.Size(31, 13);
             this.sizeLabel.TabIndex = 10;
             this.sizeLabel.Text = "Size";
             // 
             // daysToManufactureLabel
             // 
             this.daysToManufactureLabel.AutoSize = true;
+            this.daysToManufactureLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.daysToManufactureLabel.ForeColor = System.Drawing.Color.Blue;
             this.daysToManufactureLabel.Location = new System.Drawing.Point(27, 254);
             this.daysToManufactureLabel.Name = "daysToManufactureLabel";
-            this.daysToManufactureLabel.Size = new System.Drawing.Size(106, 13);
+            this.daysToManufactureLabel.Size = new System.Drawing.Size(125, 13);
             this.daysToManufactureLabel.TabIndex = 11;
             this.daysToManufactureLabel.Text = "Days to Manufacture";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Blue;
             this.label3.Location = new System.Drawing.Point(96, 36);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 12;
             this.label3.Text = "ProductLine";
             // 
@@ -205,6 +229,8 @@ namespace CatalogUserControl
             this.mainInfoTabPage.Controls.Add(this.descriptionLabel);
             this.mainInfoTabPage.Controls.Add(this.productIdLabel);
             this.mainInfoTabPage.Controls.Add(this.nameProductLabel);
+            this.mainInfoTabPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainInfoTabPage.ForeColor = System.Drawing.Color.Blue;
             this.mainInfoTabPage.Location = new System.Drawing.Point(4, 22);
             this.mainInfoTabPage.Name = "mainInfoTabPage";
             this.mainInfoTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -215,7 +241,8 @@ namespace CatalogUserControl
             // 
             // productDescriptionTextBox
             // 
-            this.productDescriptionTextBox.Location = new System.Drawing.Point(128, 154);
+            this.productDescriptionTextBox.ForeColor = System.Drawing.Color.Navy;
+            this.productDescriptionTextBox.Location = new System.Drawing.Point(135, 154);
             this.productDescriptionTextBox.Multiline = true;
             this.productDescriptionTextBox.Name = "productDescriptionTextBox";
             this.productDescriptionTextBox.ReadOnly = true;
@@ -224,7 +251,8 @@ namespace CatalogUserControl
             // 
             // productNameTextBox
             // 
-            this.productNameTextBox.Location = new System.Drawing.Point(128, 93);
+            this.productNameTextBox.ForeColor = System.Drawing.Color.Navy;
+            this.productNameTextBox.Location = new System.Drawing.Point(135, 93);
             this.productNameTextBox.Name = "productNameTextBox";
             this.productNameTextBox.ReadOnly = true;
             this.productNameTextBox.Size = new System.Drawing.Size(151, 20);
@@ -232,7 +260,8 @@ namespace CatalogUserControl
             // 
             // productModelIdTextBox
             // 
-            this.productModelIdTextBox.Location = new System.Drawing.Point(128, 33);
+            this.productModelIdTextBox.ForeColor = System.Drawing.Color.Navy;
+            this.productModelIdTextBox.Location = new System.Drawing.Point(135, 33);
             this.productModelIdTextBox.Name = "productModelIdTextBox";
             this.productModelIdTextBox.ReadOnly = true;
             this.productModelIdTextBox.Size = new System.Drawing.Size(116, 20);
@@ -241,9 +270,11 @@ namespace CatalogUserControl
             // descriptionLabel
             // 
             this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel.ForeColor = System.Drawing.Color.Blue;
             this.descriptionLabel.Location = new System.Drawing.Point(27, 157);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.descriptionLabel.Size = new System.Drawing.Size(71, 13);
             this.descriptionLabel.TabIndex = 10;
             this.descriptionLabel.Text = "Description";
             // 
@@ -267,6 +298,7 @@ namespace CatalogUserControl
             // 
             // productClassTextBox
             // 
+            this.productClassTextBox.ForeColor = System.Drawing.Color.Navy;
             this.productClassTextBox.Location = new System.Drawing.Point(188, 72);
             this.productClassTextBox.Name = "productClassTextBox";
             this.productClassTextBox.ReadOnly = true;
@@ -275,6 +307,7 @@ namespace CatalogUserControl
             // 
             // productProductLineTextBox
             // 
+            this.productProductLineTextBox.ForeColor = System.Drawing.Color.Navy;
             this.productProductLineTextBox.Location = new System.Drawing.Point(188, 33);
             this.productProductLineTextBox.Name = "productProductLineTextBox";
             this.productProductLineTextBox.ReadOnly = true;
@@ -284,9 +317,11 @@ namespace CatalogUserControl
             // classLabel
             // 
             this.classLabel.AutoSize = true;
+            this.classLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classLabel.ForeColor = System.Drawing.Color.Blue;
             this.classLabel.Location = new System.Drawing.Point(96, 75);
             this.classLabel.Name = "classLabel";
-            this.classLabel.Size = new System.Drawing.Size(32, 13);
+            this.classLabel.Size = new System.Drawing.Size(37, 13);
             this.classLabel.TabIndex = 13;
             this.classLabel.Text = "Class";
             // 
@@ -318,6 +353,7 @@ namespace CatalogUserControl
             // 
             this.productFinishedFlagCheckBox.AutoCheck = false;
             this.productFinishedFlagCheckBox.AutoSize = true;
+            this.productFinishedFlagCheckBox.ForeColor = System.Drawing.Color.Navy;
             this.productFinishedFlagCheckBox.Location = new System.Drawing.Point(344, 75);
             this.productFinishedFlagCheckBox.Name = "productFinishedFlagCheckBox";
             this.productFinishedFlagCheckBox.Size = new System.Drawing.Size(15, 14);
@@ -328,6 +364,7 @@ namespace CatalogUserControl
             // 
             this.productMakeFlagCheckBox.AutoCheck = false;
             this.productMakeFlagCheckBox.AutoSize = true;
+            this.productMakeFlagCheckBox.ForeColor = System.Drawing.Color.Navy;
             this.productMakeFlagCheckBox.Location = new System.Drawing.Point(344, 33);
             this.productMakeFlagCheckBox.Name = "productMakeFlagCheckBox";
             this.productMakeFlagCheckBox.Size = new System.Drawing.Size(15, 14);
@@ -336,66 +373,119 @@ namespace CatalogUserControl
             // 
             // productDaysToManufactureTextBox
             // 
-            this.productDaysToManufactureTextBox.Location = new System.Drawing.Point(139, 251);
+            this.productDaysToManufactureTextBox.ForeColor = System.Drawing.Color.Navy;
+            this.productDaysToManufactureTextBox.Location = new System.Drawing.Point(158, 251);
             this.productDaysToManufactureTextBox.Name = "productDaysToManufactureTextBox";
             this.productDaysToManufactureTextBox.ReadOnly = true;
-            this.productDaysToManufactureTextBox.Size = new System.Drawing.Size(63, 20);
+            this.productDaysToManufactureTextBox.Size = new System.Drawing.Size(44, 20);
             this.productDaysToManufactureTextBox.TabIndex = 16;
             // 
             // productReordePointTextBox
             // 
-            this.productReordePointTextBox.Location = new System.Drawing.Point(130, 199);
+            this.productReordePointTextBox.ForeColor = System.Drawing.Color.Navy;
+            this.productReordePointTextBox.Location = new System.Drawing.Point(158, 199);
             this.productReordePointTextBox.Name = "productReordePointTextBox";
             this.productReordePointTextBox.ReadOnly = true;
-            this.productReordePointTextBox.Size = new System.Drawing.Size(73, 20);
+            this.productReordePointTextBox.Size = new System.Drawing.Size(45, 20);
             this.productReordePointTextBox.TabIndex = 15;
             // 
             // safetyStockLevelTextBox
             // 
-            this.safetyStockLevelTextBox.Location = new System.Drawing.Point(130, 141);
+            this.safetyStockLevelTextBox.ForeColor = System.Drawing.Color.Navy;
+            this.safetyStockLevelTextBox.Location = new System.Drawing.Point(158, 141);
             this.safetyStockLevelTextBox.Name = "safetyStockLevelTextBox";
             this.safetyStockLevelTextBox.ReadOnly = true;
-            this.safetyStockLevelTextBox.Size = new System.Drawing.Size(72, 20);
+            this.safetyStockLevelTextBox.Size = new System.Drawing.Size(44, 20);
             this.safetyStockLevelTextBox.TabIndex = 14;
             // 
             // productListPriceTextBox
             // 
-            this.productListPriceTextBox.Location = new System.Drawing.Point(130, 87);
+            this.productListPriceTextBox.ForeColor = System.Drawing.Color.Navy;
+            this.productListPriceTextBox.Location = new System.Drawing.Point(158, 87);
             this.productListPriceTextBox.Name = "productListPriceTextBox";
             this.productListPriceTextBox.ReadOnly = true;
-            this.productListPriceTextBox.Size = new System.Drawing.Size(73, 20);
+            this.productListPriceTextBox.Size = new System.Drawing.Size(45, 20);
             this.productListPriceTextBox.TabIndex = 13;
             // 
             // productStandarTextBox
             // 
-            this.productStandarTextBox.Location = new System.Drawing.Point(130, 30);
+            this.productStandarTextBox.ForeColor = System.Drawing.Color.Navy;
+            this.productStandarTextBox.Location = new System.Drawing.Point(158, 30);
             this.productStandarTextBox.Name = "productStandarTextBox";
             this.productStandarTextBox.ReadOnly = true;
-            this.productStandarTextBox.Size = new System.Drawing.Size(73, 20);
+            this.productStandarTextBox.Size = new System.Drawing.Size(45, 20);
             this.productStandarTextBox.TabIndex = 12;
             // 
             // photosTabPage
             // 
+            this.photosTabPage.BackColor = System.Drawing.Color.White;
             this.photosTabPage.Controls.Add(this.addPictureButton);
             this.photosTabPage.Controls.Add(this.changePictureButton);
             this.photosTabPage.Controls.Add(this.selectPictureGroupBox);
             this.photosTabPage.Controls.Add(this.productPictureBox);
+            this.photosTabPage.ForeColor = System.Drawing.Color.White;
             this.photosTabPage.Location = new System.Drawing.Point(4, 22);
             this.photosTabPage.Name = "photosTabPage";
             this.photosTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.photosTabPage.Size = new System.Drawing.Size(381, 305);
             this.photosTabPage.TabIndex = 3;
             this.photosTabPage.Text = "Photos";
-            this.photosTabPage.UseVisualStyleBackColor = true;
+            // 
+            // addPictureButton
+            // 
+            this.addPictureButton.BackColor = System.Drawing.Color.Blue;
+            this.addPictureButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addPictureButton.Location = new System.Drawing.Point(210, 249);
+            this.addPictureButton.Name = "addPictureButton";
+            this.addPictureButton.Size = new System.Drawing.Size(128, 33);
+            this.addPictureButton.TabIndex = 20;
+            this.addPictureButton.Text = "Add Picture";
+            this.addPictureButton.UseVisualStyleBackColor = false;
+            this.addPictureButton.Click += new System.EventHandler(this.addPictureButton_Click_1);
+            // 
+            // changePictureButton
+            // 
+            this.changePictureButton.BackColor = System.Drawing.Color.Blue;
+            this.changePictureButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changePictureButton.Location = new System.Drawing.Point(50, 249);
+            this.changePictureButton.Name = "changePictureButton";
+            this.changePictureButton.Size = new System.Drawing.Size(127, 33);
+            this.changePictureButton.TabIndex = 19;
+            this.changePictureButton.Text = "Change Picture";
+            this.changePictureButton.UseVisualStyleBackColor = false;
+            this.changePictureButton.Click += new System.EventHandler(this.changePictureButton_Click);
+            // 
+            // selectPictureGroupBox
+            // 
+            this.selectPictureGroupBox.Controls.Add(this.addPictureTextBox);
+            this.selectPictureGroupBox.Controls.Add(this.selectPictureButton);
+            this.selectPictureGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectPictureGroupBox.ForeColor = System.Drawing.Color.Blue;
+            this.selectPictureGroupBox.Location = new System.Drawing.Point(20, 185);
+            this.selectPictureGroupBox.Name = "selectPictureGroupBox";
+            this.selectPictureGroupBox.Size = new System.Drawing.Size(344, 44);
+            this.selectPictureGroupBox.TabIndex = 18;
+            this.selectPictureGroupBox.TabStop = false;
+            this.selectPictureGroupBox.Text = "Select Picture";
+            // 
+            // addPictureTextBox
+            // 
+            this.addPictureTextBox.Location = new System.Drawing.Point(6, 19);
+            this.addPictureTextBox.Name = "addPictureTextBox";
+            this.addPictureTextBox.Size = new System.Drawing.Size(226, 20);
+            this.addPictureTextBox.TabIndex = 17;
             // 
             // selectPictureButton
             // 
+            this.selectPictureButton.BackColor = System.Drawing.Color.Blue;
+            this.selectPictureButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectPictureButton.ForeColor = System.Drawing.Color.White;
             this.selectPictureButton.Location = new System.Drawing.Point(238, 12);
             this.selectPictureButton.Name = "selectPictureButton";
             this.selectPictureButton.Size = new System.Drawing.Size(102, 26);
             this.selectPictureButton.TabIndex = 16;
             this.selectPictureButton.Text = "Open";
-            this.selectPictureButton.UseVisualStyleBackColor = true;
+            this.selectPictureButton.UseVisualStyleBackColor = false;
             this.selectPictureButton.Click += new System.EventHandler(this.selectPictureButton_Click);
             // 
             // productPictureBox
@@ -406,46 +496,10 @@ namespace CatalogUserControl
             this.productPictureBox.TabIndex = 14;
             this.productPictureBox.TabStop = false;
             // 
-            // addPictureTextBox
-            // 
-            this.addPictureTextBox.Location = new System.Drawing.Point(6, 19);
-            this.addPictureTextBox.Name = "addPictureTextBox";
-            this.addPictureTextBox.Size = new System.Drawing.Size(226, 20);
-            this.addPictureTextBox.TabIndex = 17;
-            // 
-            // selectPictureGroupBox
-            // 
-            this.selectPictureGroupBox.Controls.Add(this.addPictureTextBox);
-            this.selectPictureGroupBox.Controls.Add(this.selectPictureButton);
-            this.selectPictureGroupBox.Location = new System.Drawing.Point(20, 185);
-            this.selectPictureGroupBox.Name = "selectPictureGroupBox";
-            this.selectPictureGroupBox.Size = new System.Drawing.Size(344, 44);
-            this.selectPictureGroupBox.TabIndex = 18;
-            this.selectPictureGroupBox.TabStop = false;
-            this.selectPictureGroupBox.Text = "Select Picture";
-            // 
-            // changePictureButton
-            // 
-            this.changePictureButton.Location = new System.Drawing.Point(50, 249);
-            this.changePictureButton.Name = "changePictureButton";
-            this.changePictureButton.Size = new System.Drawing.Size(127, 33);
-            this.changePictureButton.TabIndex = 19;
-            this.changePictureButton.Text = "Change Picture";
-            this.changePictureButton.UseVisualStyleBackColor = true;
-            this.changePictureButton.Click += new System.EventHandler(this.changePictureButton_Click);
-            // 
-            // addPictureButton
-            // 
-            this.addPictureButton.Location = new System.Drawing.Point(210, 249);
-            this.addPictureButton.Name = "addPictureButton";
-            this.addPictureButton.Size = new System.Drawing.Size(128, 33);
-            this.addPictureButton.TabIndex = 20;
-            this.addPictureButton.Text = "Add Picture";
-            this.addPictureButton.UseVisualStyleBackColor = true;
-            this.addPictureButton.Click += new System.EventHandler(this.addPictureButton_Click_1);
-            // 
             // sizeListView
             // 
+            this.sizeListView.BackColor = System.Drawing.SystemColors.Control;
+            this.sizeListView.ForeColor = System.Drawing.Color.Navy;
             this.sizeListView.HideSelection = false;
             this.sizeListView.Location = new System.Drawing.Point(235, 136);
             this.sizeListView.Name = "sizeListView";
@@ -457,6 +511,8 @@ namespace CatalogUserControl
             // 
             // colorListView
             // 
+            this.colorListView.BackColor = System.Drawing.SystemColors.Control;
+            this.colorListView.ForeColor = System.Drawing.Color.Navy;
             this.colorListView.HideSelection = false;
             this.colorListView.Location = new System.Drawing.Point(57, 136);
             this.colorListView.MultiSelect = false;
@@ -472,6 +528,7 @@ namespace CatalogUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(389, 329);
             this.Controls.Add(this.tabControl1);
             this.Name = "DetailForm";
@@ -485,9 +542,9 @@ namespace CatalogUserControl
             this.productionTabPage.ResumeLayout(false);
             this.productionTabPage.PerformLayout();
             this.photosTabPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.productPictureBox)).EndInit();
             this.selectPictureGroupBox.ResumeLayout(false);
             this.selectPictureGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
