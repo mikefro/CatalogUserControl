@@ -22,7 +22,7 @@ Or you can go to the following link if you prefer to download and use [Catalog U
 - You can now drag the component to your project.
 
 
-##Usability 
+## Usability 
 First of all I am going to mention the distribution of its components:
 - On the main form I have differentiated the selection section of categories, subcategories and language from the product information by inserting between them the title for the product model with a larger and more noticeable font.
 So the price will also stand out from the rest of product information I have also given this a different font as it is a detail clients want to know quickly.
