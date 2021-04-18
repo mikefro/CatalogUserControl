@@ -25,9 +25,11 @@ Or you can go to the following link if you prefer to download and use [Catalog U
 ## Usability 
  First of all I am going to mention the distribution of its components.
  
+ 
  <p align="center">
   <img width="502" height="608" src="https://github.com/miquelpaucasesnoves/CatalogUserControl/blob/main/ScreenShots/mainFormScreentShot.png">
 </p>
+
 
   On the main form I have differentiated the selection section of categories, subcategories and language from the product information by inserting between them the title for the product model with a larger and more noticeable font.
   
@@ -39,10 +41,11 @@ Or you can go to the following link if you prefer to download and use [Catalog U
  
   In the detail form I have organised the common aspects by tabs. I have created 4 tabs:
   
-         - Main product information.
-         - Style details
-         - Production data
-         - Section to add or change product photo
+    - Main product information.
+    - Style details
+    - Production data
+    - Section to add or change product photo
+
 
 
  <p align="center">
