@@ -8,7 +8,7 @@ Below I present the installation process and the aspects I want to highlight abo
 ## Installation
 
   You can download the complete project if you wish to modify it for your own use.
-Or you can go to the following link if you prefer to download and use [Catalog UserControl Library](https://github.com/miquelpaucasesnoves/) directly.
+Or you can go to the following link if you prefer to download and use [Catalog UserControl Library](https://github.com/miquelpaucasesnoves/CatalogUserControl/blob/main/CatalogUserControl/bin/Release/CatalogUserControl.dll) directly.
 
 
 - When using the User Control go to Toolbox list and click right and select Add Tab from the menu.
