@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CatalogUserControl
 {
-    public class DataAccess
+    internal class DataAccess
     {
         static string connectionString = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = AdventureWorks2016; 
             Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; 
@@ -20,7 +20,7 @@ namespace CatalogUserControl
 
 
         //Methods to get ProductModel by a integer
-        public ProductModel GetProductModel(int productModelId, String language, String category, String subCategory)
+        public ProductModel GetProductModel(int productModelId, String language, int category, int subCategory)
         {
             string sql = $"SELECT DISTINCT ProductModel.ProductModelID, ProductModel.Name, ProductPhoto.LargePhoto, Product.ListPrice "
                                 + $"FROM Production.ProductModel "
@@ -70,7 +70,7 @@ namespace CatalogUserControl
         }
 
         //return a  integer list with all productmodelIds
-        public List<int> getAllProducts(String category, String subCategory)
+        public List<int> getAllProducts(int category, int subCategory)
         {
             string sql = "SELECT Product.ProductModelID "
                             + "FROM Production.Product "
@@ -148,33 +148,35 @@ namespace CatalogUserControl
             }
 
         }
-
+/*
         //return all the categories of the products
-        public List<string> GetCategories()
+        public List<Category> GetCategories()
         {
-            string sql = $"Select ProductCategory.Name from AdventureWorks2016.Production.ProductCategory;";
+            string sql = $"Select ProductCategory.ProductCategoryID,ProductCategory.Name from AdventureWorks2016.Production.ProductCategory;";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                List<string> categories = conn.Query<string>(sql).ToList();
+                List<Category> categories = conn.Query<Category>(sql).ToList();
                 return categories;
             }
         }
 
         //returns the subcategories with a given category passed by parameter
-        public List<string> GetSubCategories(string category)
+        public List<Subcategory> GetSubCategories(int category)
         {
-            string sql = $"select productsubcategory.Name from Production.ProductSubcategory " +
+
+
+            string sql = $" Select ProductSubcategory.ProductSubcategoryID,ProductSubcategory.Name " +
              $"inner join Production.ProductCategory on ProductCategory.ProductCategoryID = ProductSubcategory.ProductCategoryID " +
-             $"where '{category}' = Productcategory.Name";
+             $"where '{category}' = Productcategory.ProductCategoryID";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                List<string> subCategories = conn.Query<string>(sql).ToList();
+                List<Subcategory> subCategories = conn.Query<Subcategory>(sql).ToList();
                 return subCategories;
             }
         }
-
+*/
         //returns the PhotoId with a given ProductId (for Update Product Image)
         public int GetProductPhotoId(int productId)
         {

@@ -16,16 +16,18 @@ namespace CatalogUserControl
         Button sizeButton;
         Button colorButton;
 
+
+        //Property for setting an ProductModel into the User Control CatalogProductUC
+        public ProductModel productModel;
+
+        public int category,subcategory = 0;
+        public string language;
+
         static DataAccess da = new DataAccess();
 
-        ProductModel productModel;
         Product detailFormProduct;
 
-        String language,category,subCategory;
-
         ToolTip toolTip1 = new ToolTip();
-
-
 
         //Method to clean the labels and FlowLayouts
         private void CleanProduct()
@@ -38,37 +40,9 @@ namespace CatalogUserControl
         }
 
         //Method to load the product into the main Form
-        public void LoadProduct()
+        public void LoadProduct(int categoryId, int subCategoryId,string language)
         {
             CleanProduct();
-            language = englishRadioButton.Checked != true ? "fr" : "en";
-
-            if (categoryComboBox.SelectedIndex != -1)
-            {
-                category = $"AND Production.ProductCategory.Name = '{categoryComboBox.SelectedItem.ToString()}' ";
-            }
-
-                     if (subcategoryComboBox.SelectedItem != null)
-                     {
-                         subCategory = $"AND Production.ProductSubcategory.Name = '{subcategoryComboBox.SelectedItem.ToString()}' ";
-                     }
-            
-
-            List<int> products = da.getAllProducts(category, subCategory);
-            Random rnd = new Random();
-            int outNumber = products[rnd.Next(0, products.Count)];
-
-            productModel = da.GetProductModel(outNumber, language,category,subCategory);
-
-            while (productModel.ProductModelID == 0 || productModel == null)
-            {
-                outNumber = products[rnd.Next(0, products.Count)];
-                productModel = da.GetProductModel(outNumber, language,category,subCategory);
-            }
-
-            productModel.Sizes = da.GetSizesProduct(outNumber);
-            productModel.Colors = da.GetColorsProduct(outNumber);
-
 
             //Set the values of the ProductModel to the components of the UserControl.
             System.IO.MemoryStream ms = new MemoryStream(productModel.LargePhoto);
@@ -184,26 +158,6 @@ namespace CatalogUserControl
             productIdLabel.Text = "PRODUCT ID : " + auxProduct.productID.ToString();
         }
 
-        //Load the catComboBox with all avaliables categories
-        private void LoadCatComboBox()
-        {
-            List<string> categories = da.GetCategories();
-            foreach (string cat in categories)
-            {
-                categoryComboBox.Items.Add(cat);
-            }
-        }
-        private void categoryComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            subcategoryComboBox.Items.Clear();
-            List<string> subCategories = da.GetSubCategories(categoryComboBox.SelectedItem.ToString()).ToList();
-
-            foreach (string subCat in subCategories)
-            {
-                subcategoryComboBox.Items.Add(subCat);
-            }
-        }
-
         public CatalogProductsUC()
         {
             InitializeComponent();
@@ -211,14 +165,8 @@ namespace CatalogUserControl
 
         private void CatalogProductsUC_Load(object sender, EventArgs e)
         {
-            LoadProduct();
+//            LoadProduct();
             configToolTips();
-            LoadCatComboBox();
-        }
-
-        private void catalogScrollBar_Scroll(object sender, ScrollEventArgs e)
-        {
-            LoadProduct();
         }
 
         //Configure the ToolTips of the form, This form has three Tooltips

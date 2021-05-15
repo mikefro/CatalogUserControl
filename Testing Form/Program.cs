@@ -1,10 +1,11 @@
-﻿using System;
+﻿using CatalogUserControl;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Test_Form
+namespace Testing_Form
 {
     static class Program
     {
