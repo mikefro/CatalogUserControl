@@ -15,9 +15,10 @@ namespace CatalogUserControl
 
         DataAccessTestingForm da = new DataAccessTestingForm();
         List<int> products;
-        int categoryId, subcategoryId;
-
-        ProductModel productModel;
+        int categoryId = 0;
+        int subcategoryId = 0;
+        int scrollMaxPosition;
+        string language;
 
         public Form1()
         {
@@ -28,9 +29,16 @@ namespace CatalogUserControl
         {
             LoadCatComboBox();
             products = da.getAllProducts();
-            for (int i = 1; i < 4; i++)
+            LoadFourProducts();            
+        }
+
+        private void LoadFourProducts()
+        {
+            for (int i = 0; i < 4; i++)
             {
-                
+                ProductModel p = new ProductModel();
+                p = LoadProduct(0, 0, language);
+                catalogFlowLayout.Controls.Add(new CatalogProductsUC(p));
             }
         }
 
@@ -40,10 +48,7 @@ namespace CatalogUserControl
         private void LoadCatComboBox()
         {
             List<Category> categories = da.GetCategories();
-
             BindingList<Category> objects = new BindingList<Category>();
-
-            
 
             foreach (Category cat in categories)
             {
@@ -84,7 +89,21 @@ namespace CatalogUserControl
 
         private void catalogFlowLayout_Scroll(object sender, ScrollEventArgs e)
         {
+            while (catalogFlowLayout.VerticalScroll.Value > scrollMaxPosition)
+            {
+                scrollMaxPosition = catalogFlowLayout.VerticalScroll.Value;
+            }
+
             positionscrollTextBox.Text = catalogFlowLayout.VerticalScroll.Value.ToString();
+
+            //Three conditions for good use of the load products moving the scrollbar of the FlowLayoutPanel
+            if ((!AllProductsShowed()) && 
+                (catalogFlowLayout.VerticalScroll.Value % 280 == 0) &&
+                (scrollMaxPosition - catalogFlowLayout.VerticalScroll.Value < 15))
+            {
+                LoadFourProducts();
+            }
+
         }
 
         private void subcategoryComboBox_SelectedValueChanged(object sender, EventArgs e)
@@ -96,36 +115,49 @@ namespace CatalogUserControl
             }
         }
 
-        private void catalogProductsUC1_Load(object sender, EventArgs e)
+        //Looking for an all products are showed or not
+        private Boolean AllProductsShowed()
         {
-            
+            foreach(int i in products)
+            {
+                if (i != 0)
+                    return false;
+            }
+            return true;
         }
 
+        //Load a ProductModel to pass a single CatalogProductsUC ( the user control)
         public ProductModel LoadProduct(int categoryId, int subcategoryId, string language)
         {
-            //            language = englishRadioButton.Checked != true ? "fr" : "en";
             ProductModel productModel;
 
+            language = englishRadioButton.Checked != true ? "fr" : "en";
+
             Random rnd = new Random();
-            int outNumber = products[rnd.Next(0, products.Count)];
+            int indexProductList = rnd.Next(0, products.Count);
+
+            int outNumber = products[indexProductList];
 
             productModel = da.GetProductModel(outNumber, language, categoryId, subcategoryId);
 
-            while (productModel.ProductModelID == 0 || productModel == null)
+            while (productModel == null)
             {
-                outNumber = products[rnd.Next(0, products.Count)];
+             indexProductList = rnd.Next(0, products.Count);
+
+             outNumber = products[indexProductList];
                 productModel = da.GetProductModel(outNumber, language, categoryId, subcategoryId);
             }
+
+            //Flag a loaded product succesfully
+            products[indexProductList] = 0;
 
             productModel.Sizes = da.GetSizesProduct(outNumber);
             productModel.Colors = da.GetColorsProduct(outNumber);
 
-            
-
-            catalogFlowLayout.Controls.Add(new CatalogProductUC u);
-
             return productModel;
         }
         }
+
+    
     }
 

@@ -54,9 +54,9 @@ namespace CatalogUserControl
             // productPictureBox
             // 
             this.productPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.productPictureBox.Location = new System.Drawing.Point(27, 58);
+            this.productPictureBox.Location = new System.Drawing.Point(17, 58);
             this.productPictureBox.Name = "productPictureBox";
-            this.productPictureBox.Size = new System.Drawing.Size(180, 143);
+            this.productPictureBox.Size = new System.Drawing.Size(181, 136);
             this.productPictureBox.TabIndex = 3;
             this.productPictureBox.TabStop = false;
             this.productPictureBox.Click += new System.EventHandler(this.productPictureBox_Click);
@@ -66,7 +66,7 @@ namespace CatalogUserControl
             this.productIdLabel.AutoSize = true;
             this.productIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productIdLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.productIdLabel.Location = new System.Drawing.Point(24, 227);
+            this.productIdLabel.Location = new System.Drawing.Point(14, 211);
             this.productIdLabel.Name = "productIdLabel";
             this.productIdLabel.Size = new System.Drawing.Size(51, 16);
             this.productIdLabel.TabIndex = 4;
@@ -77,7 +77,7 @@ namespace CatalogUserControl
             this.nameProductModelLabel.AutoSize = true;
             this.nameProductModelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameProductModelLabel.ForeColor = System.Drawing.Color.Blue;
-            this.nameProductModelLabel.Location = new System.Drawing.Point(23, 21);
+            this.nameProductModelLabel.Location = new System.Drawing.Point(13, 21);
             this.nameProductModelLabel.Name = "nameProductModelLabel";
             this.nameProductModelLabel.Size = new System.Drawing.Size(66, 24);
             this.nameProductModelLabel.TabIndex = 5;
@@ -95,7 +95,7 @@ namespace CatalogUserControl
             this.sizesGroupBox.Controls.Add(this.sizeFlowLayout);
             this.sizesGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sizesGroupBox.ForeColor = System.Drawing.Color.Navy;
-            this.sizesGroupBox.Location = new System.Drawing.Point(248, 58);
+            this.sizesGroupBox.Location = new System.Drawing.Point(238, 58);
             this.sizesGroupBox.Name = "sizesGroupBox";
             this.sizesGroupBox.Size = new System.Drawing.Size(198, 92);
             this.sizesGroupBox.TabIndex = 7;
@@ -107,7 +107,7 @@ namespace CatalogUserControl
             this.colorGroupBox.Controls.Add(this.colorFlowLayout);
             this.colorGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colorGroupBox.ForeColor = System.Drawing.Color.Navy;
-            this.colorGroupBox.Location = new System.Drawing.Point(248, 169);
+            this.colorGroupBox.Location = new System.Drawing.Point(238, 169);
             this.colorGroupBox.Name = "colorGroupBox";
             this.colorGroupBox.Size = new System.Drawing.Size(198, 95);
             this.colorGroupBox.TabIndex = 8;
@@ -119,7 +119,7 @@ namespace CatalogUserControl
             this.prizeProductLabel.AutoSize = true;
             this.prizeProductLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prizeProductLabel.ForeColor = System.Drawing.Color.Blue;
-            this.prizeProductLabel.Location = new System.Drawing.Point(153, 221);
+            this.prizeProductLabel.Location = new System.Drawing.Point(13, 234);
             this.prizeProductLabel.Name = "prizeProductLabel";
             this.prizeProductLabel.Size = new System.Drawing.Size(66, 24);
             this.prizeProductLabel.TabIndex = 9;
@@ -137,7 +137,7 @@ namespace CatalogUserControl
             this.Controls.Add(this.productIdLabel);
             this.Controls.Add(this.productPictureBox);
             this.Name = "CatalogProductsUC";
-            this.Size = new System.Drawing.Size(464, 288);
+            this.Size = new System.Drawing.Size(450, 270);
             this.Load += new System.EventHandler(this.CatalogProductsUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productPictureBox)).EndInit();
             this.sizesGroupBox.ResumeLayout(false);

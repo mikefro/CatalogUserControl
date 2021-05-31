@@ -107,8 +107,27 @@ namespace CatalogUserControl
 
         }
 
+
+        //Get a Description Product with given ProductModelId
+        public string getProductDescription(int productModelId, String language)
+        {
+            string sql = $"SELECT DISTINCT production.ProductDescription.Description as Description " +
+                      $"FROM AdventureWorks2016.Production.Product inner join Production.ProductModel on Product.ProductModelID = ProductModel.ProductModelID " +
+                      $"inner join Production.ProductSubcategory on Product.ProductSubcategoryID = ProductSubcategory.ProductSubcategoryID " +
+                      $"inner join Production.ProductModelProductDescriptionCulture ON ProductModel.ProductModelID = ProductModelProductDescriptionCulture.ProductModelID " +
+                      $"inner join production.ProductDescription on ProductModelProductDescriptionCulture.ProductDescriptionID = ProductDescription.ProductDescriptionID " +
+                      $"where ProductModelProductDescriptionCulture.CultureID = '{language}' and production.Product.ProductModelID = '{productModelId}'";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string description = conn.Query<string>(sql).FirstOrDefault();
+                return description;
+            }
+
+        }
+
         //To get the productId by a size of that product
-        public Product getProductBySize(int productModelId, String language, String size)
+        public Product getProductBySize(int productModelId,String size)
         {
             string sql = $"SELECT ProductID,production.ProductDescription.Description as Description,Product.Name as Name,ProductNumber" +
                       $",MakeFlag,FinishedGoodsFlag,Color,SafetyStockLevel,ReorderPoint,StandardCost,ListPrice,Size,SizeUnitMeasureCode as SizeUnitMeasure,WeightUnitMeasureCode as WeightUnitMeasure" +
@@ -117,7 +136,7 @@ namespace CatalogUserControl
                       $"inner join Production.ProductSubcategory on Product.ProductSubcategoryID = ProductSubcategory.ProductSubcategoryID " +
                       $"inner join Production.ProductModelProductDescriptionCulture ON ProductModel.ProductModelID = ProductModelProductDescriptionCulture.ProductModelID " +
                       $"inner join production.ProductDescription on ProductModelProductDescriptionCulture.ProductDescriptionID = ProductDescription.ProductDescriptionID " +
-                      $"where ProductModelProductDescriptionCulture.CultureID = '{language}' and production.Product.ProductModelID = '{productModelId}' " +
+                      $"where ProductModelProductDescriptionCulture.CultureID = 'en' and production.Product.ProductModelID = '{productModelId}' " +
                       $"and product.size {size}";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -129,7 +148,7 @@ namespace CatalogUserControl
         }
 
         //To get the productId by a color of that product
-        public Product getProductByColor(int productModelId, String language, String color)
+        public Product getProductByColor(int productModelId,String color)
         {
             string sql = $"SELECT ProductID,production.ProductDescription.Description as Description,Product.Name as Name,ProductNumber" +
                       $",MakeFlag,FinishedGoodsFlag,Color,SafetyStockLevel,ReorderPoint,StandardCost,ListPrice,Size,SizeUnitMeasureCode as SizeUnitMeasure,WeightUnitMeasureCode as WeightUnitMeasure" +
@@ -138,7 +157,7 @@ namespace CatalogUserControl
                       $"inner join Production.ProductSubcategory on Product.ProductSubcategoryID = ProductSubcategory.ProductSubcategoryID " +
                       $"inner join Production.ProductModelProductDescriptionCulture ON ProductModel.ProductModelID = ProductModelProductDescriptionCulture.ProductModelID " +
                       $"inner join production.ProductDescription on ProductModelProductDescriptionCulture.ProductDescriptionID = ProductDescription.ProductDescriptionID " +
-                      $"where ProductModelProductDescriptionCulture.CultureID = '{language}' and production.Product.ProductModelID = '{productModelId}' " +
+                      $"where ProductModelProductDescriptionCulture.CultureID = 'en' and production.Product.ProductModelID = '{productModelId}' " +
                       $"and product.color {color}";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -148,35 +167,7 @@ namespace CatalogUserControl
             }
 
         }
-/*
-        //return all the categories of the products
-        public List<Category> GetCategories()
-        {
-            string sql = $"Select ProductCategory.ProductCategoryID,ProductCategory.Name from AdventureWorks2016.Production.ProductCategory;";
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                List<Category> categories = conn.Query<Category>(sql).ToList();
-                return categories;
-            }
-        }
-
-        //returns the subcategories with a given category passed by parameter
-        public List<Subcategory> GetSubCategories(int category)
-        {
-
-
-            string sql = $" Select ProductSubcategory.ProductSubcategoryID,ProductSubcategory.Name " +
-             $"inner join Production.ProductCategory on ProductCategory.ProductCategoryID = ProductSubcategory.ProductCategoryID " +
-             $"where '{category}' = Productcategory.ProductCategoryID";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                List<Subcategory> subCategories = conn.Query<Subcategory>(sql).ToList();
-                return subCategories;
-            }
-        }
-*/
         //returns the PhotoId with a given ProductId (for Update Product Image)
         public int GetProductPhotoId(int productId)
         {

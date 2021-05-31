@@ -91,16 +91,17 @@ namespace CatalogUserControl
         //Methods to get ProductModel by a integer
         public ProductModel GetProductModel(int productModelId, String language, int category, int subCategory)
         {
-            string  categorySql, subCategorySql = "";
+            string categorySql = "";
+            string subCategorySql = "";
 
             if (category > 0 )
             {
-                categorySql = $"AND Production.ProductCategory.ProductSubcategoryID = {category} ";
+                categorySql = $"AND Production.ProductCategory.ProductcategoryID = {category} ";
             }
 
             if (subCategory > 0)
             {
-                subCategorySql = $"AND Production.ProductSubcategory.Name = {subCategory} ";
+                subCategorySql = $"AND Production.ProductSubcategory.ProductsubcategoryID = {subCategory} ";
             }
 
             string sql = $"SELECT DISTINCT ProductModel.ProductModelID, ProductModel.Name, ProductPhoto.LargePhoto, Product.ListPrice "
@@ -113,8 +114,8 @@ namespace CatalogUserControl
                                 + $"JOIN Production.ProductModelProductDescriptionCulture ON ProductModel.ProductModelID = ProductModelProductDescriptionCulture.ProductModelID "
                                 + $"JOIN production.ProductDescription on ProductModelProductDescriptionCulture.ProductDescriptionID = ProductDescription.ProductDescriptionID "
                                 + $"WHERE Product.ProductModelID = {productModelId} "
-                                + $"AND ProductModelProductDescriptionCulture.CultureID = '{language}' "
-                                + category + subCategory;
+                                + $"AND ProductModelProductDescriptionCulture.CultureID = '{language}' {categorySql} {subCategorySql}";
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 ProductModel productModel = conn.Query<ProductModel>(sql).FirstOrDefault();

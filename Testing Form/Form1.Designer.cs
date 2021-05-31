@@ -29,8 +29,6 @@ namespace CatalogUserControl
         /// </summary>
         private void InitializeComponent()
         {
-            this.frenchRadioButton = new System.Windows.Forms.RadioButton();
-            this.englishRadioButton = new System.Windows.Forms.RadioButton();
             this.languageLabel = new System.Windows.Forms.Label();
             this.subcategoryComboBox = new System.Windows.Forms.ComboBox();
             this.categoryComboBox = new System.Windows.Forms.ComboBox();
@@ -38,40 +36,16 @@ namespace CatalogUserControl
             this.categoryLabel = new System.Windows.Forms.Label();
             this.catalogFlowLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.positionscrollTextBox = new System.Windows.Forms.TextBox();
-            this.catalogProductsUC1 = new CatalogUserControl.CatalogProductsUC();
-            this.catalogFlowLayout.SuspendLayout();
+            this.frenchRadioButton = new System.Windows.Forms.RadioButton();
+            this.englishRadioButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
-            // 
-            // frenchRadioButton
-            // 
-            this.frenchRadioButton.AutoSize = true;
-            this.frenchRadioButton.ForeColor = System.Drawing.Color.Navy;
-            this.frenchRadioButton.Location = new System.Drawing.Point(465, 68);
-            this.frenchRadioButton.Name = "frenchRadioButton";
-            this.frenchRadioButton.Size = new System.Drawing.Size(58, 17);
-            this.frenchRadioButton.TabIndex = 23;
-            this.frenchRadioButton.Text = "French";
-            this.frenchRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // englishRadioButton
-            // 
-            this.englishRadioButton.AutoSize = true;
-            this.englishRadioButton.Checked = true;
-            this.englishRadioButton.ForeColor = System.Drawing.Color.Navy;
-            this.englishRadioButton.Location = new System.Drawing.Point(465, 41);
-            this.englishRadioButton.Name = "englishRadioButton";
-            this.englishRadioButton.Size = new System.Drawing.Size(59, 17);
-            this.englishRadioButton.TabIndex = 22;
-            this.englishRadioButton.TabStop = true;
-            this.englishRadioButton.Text = "English";
-            this.englishRadioButton.UseVisualStyleBackColor = true;
             // 
             // languageLabel
             // 
             this.languageLabel.AutoSize = true;
             this.languageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.languageLabel.ForeColor = System.Drawing.Color.Navy;
-            this.languageLabel.Location = new System.Drawing.Point(397, 43);
+            this.languageLabel.Location = new System.Drawing.Point(814, 43);
             this.languageLabel.Name = "languageLabel";
             this.languageLabel.Size = new System.Drawing.Size(63, 13);
             this.languageLabel.TabIndex = 21;
@@ -122,34 +96,59 @@ namespace CatalogUserControl
             // catalogFlowLayout
             // 
             this.catalogFlowLayout.AutoScroll = true;
-            this.catalogFlowLayout.Controls.Add(this.catalogProductsUC1);
-            this.catalogFlowLayout.Location = new System.Drawing.Point(30, 137);
+            this.catalogFlowLayout.AutoScrollMargin = new System.Drawing.Size(0, 10);
+            this.catalogFlowLayout.Location = new System.Drawing.Point(12, 137);
             this.catalogFlowLayout.Name = "catalogFlowLayout";
-            this.catalogFlowLayout.Size = new System.Drawing.Size(873, 297);
+            this.catalogFlowLayout.Size = new System.Drawing.Size(930, 270);
             this.catalogFlowLayout.TabIndex = 24;
             this.catalogFlowLayout.Scroll += new System.Windows.Forms.ScrollEventHandler(this.catalogFlowLayout_Scroll);
             // 
             // positionscrollTextBox
             // 
-            this.positionscrollTextBox.Location = new System.Drawing.Point(694, 41);
+            this.positionscrollTextBox.Location = new System.Drawing.Point(443, 43);
             this.positionscrollTextBox.Name = "positionscrollTextBox";
             this.positionscrollTextBox.Size = new System.Drawing.Size(100, 20);
             this.positionscrollTextBox.TabIndex = 25;
             // 
-            // catalogProductsUC1
+            // frenchRadioButton
             // 
-            this.catalogProductsUC1.BackColor = System.Drawing.Color.White;
-            this.catalogProductsUC1.Location = new System.Drawing.Point(3, 3);
-            this.catalogProductsUC1.Name = "catalogProductsUC1";
-            this.catalogProductsUC1.Size = new System.Drawing.Size(464, 288);
-            this.catalogProductsUC1.TabIndex = 0;
-            this.catalogProductsUC1.Load += new System.EventHandler(this.catalogProductsUC1_Load);
+            this.frenchRadioButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.frenchRadioButton.AutoSize = true;
+            this.frenchRadioButton.BackgroundImage = global::Testing_Form.Properties.Resources.france__1_;
+            this.frenchRadioButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.frenchRadioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.frenchRadioButton.ForeColor = System.Drawing.Color.Navy;
+            this.frenchRadioButton.Location = new System.Drawing.Point(882, 72);
+            this.frenchRadioButton.Name = "frenchRadioButton";
+            this.frenchRadioButton.Size = new System.Drawing.Size(37, 25);
+            this.frenchRadioButton.TabIndex = 23;
+            this.frenchRadioButton.Text = "      ";
+            this.frenchRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // englishRadioButton
+            // 
+            this.englishRadioButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.englishRadioButton.AutoSize = true;
+            this.englishRadioButton.BackgroundImage = global::Testing_Form.Properties.Resources.uk1;
+            this.englishRadioButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.englishRadioButton.Checked = true;
+            this.englishRadioButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.englishRadioButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.englishRadioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.englishRadioButton.ForeColor = System.Drawing.Color.Navy;
+            this.englishRadioButton.Location = new System.Drawing.Point(882, 41);
+            this.englishRadioButton.Name = "englishRadioButton";
+            this.englishRadioButton.Size = new System.Drawing.Size(37, 25);
+            this.englishRadioButton.TabIndex = 22;
+            this.englishRadioButton.TabStop = true;
+            this.englishRadioButton.Text = "      ";
+            this.englishRadioButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 514);
+            this.ClientSize = new System.Drawing.Size(979, 437);
             this.Controls.Add(this.positionscrollTextBox);
             this.Controls.Add(this.catalogFlowLayout);
             this.Controls.Add(this.frenchRadioButton);
@@ -162,7 +161,6 @@ namespace CatalogUserControl
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.catalogFlowLayout.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,7 +177,6 @@ namespace CatalogUserControl
         private System.Windows.Forms.Label categoryLabel;
         private System.Windows.Forms.FlowLayoutPanel catalogFlowLayout;
         private System.Windows.Forms.TextBox positionscrollTextBox;
-        private CatalogUserControl.CatalogProductsUC catalogProductsUC1;
     }
 }
 

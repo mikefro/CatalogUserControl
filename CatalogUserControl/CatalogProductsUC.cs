@@ -16,12 +16,7 @@ namespace CatalogUserControl
         Button sizeButton;
         Button colorButton;
 
-
-        //Property for setting an ProductModel into the User Control CatalogProductUC
         public ProductModel productModel;
-
-        public int category,subcategory = 0;
-        public string language;
 
         static DataAccess da = new DataAccess();
 
@@ -29,21 +24,77 @@ namespace CatalogUserControl
 
         ToolTip toolTip1 = new ToolTip();
 
-        //Method to clean the labels and FlowLayouts
-        private void CleanProduct()
+        public CatalogProductsUC(ProductModel newProduct)
         {
-            productIdLabel.Text = "";
-            nameProductModelLabel.Text = "";
-            prizeProductLabel.Text = "";
-            sizeFlowLayout.Controls.Clear();
-            colorFlowLayout.Controls.Clear();
+            productModel = newProduct;
+            InitializeComponent();
         }
 
-        //Method to load the product into the main Form
-        public void LoadProduct(int categoryId, int subCategoryId,string language)
+        private void CatalogProductsUC_Load(object sender, EventArgs e)
         {
-            CleanProduct();
+            LoadProduct();
+            configToolTips();
+        }
 
+        //Method for the click Event on any size Button
+        private void sizeButtons_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            String size;
+            Product auxProduct;
+
+            if (btn.Text != "Talla unica")
+                size = $" = '{btn.Text}'";
+            else
+                size = "is null";
+
+            auxProduct = da.getProductBySize(productModel.ProductModelID, size);
+
+            productIdLabel.Text = "PRODUCT ID : " + auxProduct.productID.ToString();
+        }
+
+        //Method for the click Event on any color Button
+        private void colorButtons_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            String color;
+            Product auxProduct;
+
+            if (btn.Text != "Sin color")
+                color = $" = '{btn.BackColor.Name}'";
+            else
+                color = "is null";
+
+            auxProduct = da.getProductByColor(productModel.ProductModelID, color);
+            productIdLabel.Text = "PRODUCT ID : " + auxProduct.productID.ToString();
+        }
+
+
+        //Configure the ToolTips of the form, This form has three Tooltips
+        // on pictureBox, on any sizeButton and on any colorButton
+        public void configToolTips()
+        {
+            // Set up the delays for the ToolTip.
+            toolTip1.AutoPopDelay = 5000;
+            toolTip1.InitialDelay = 1000;
+            toolTip1.ReshowDelay = 500;
+
+            // Set up the ToolTip text for Controls that you want use it
+            toolTip1.SetToolTip(this.productPictureBox, da.getProductDescription(productModel.ProductModelID,"en"));
+        }
+
+        //Method/Event to go the detailForm
+        private void productPictureBox_Click(object sender, EventArgs e)
+        {
+            detailFormProduct = da.getProduct(productModel.ProductModelID,"en");
+            DetailForm detailForm = new DetailForm(detailFormProduct, productModel);
+            detailForm.ShowDialog();
+        }
+
+
+        //Method to load the product into the main Form
+        public void LoadProduct()
+        {
             //Set the values of the ProductModel to the components of the UserControl.
             System.IO.MemoryStream ms = new MemoryStream(productModel.LargePhoto);
             Image largePhoto = Image.FromStream(ms);
@@ -56,7 +107,10 @@ namespace CatalogUserControl
                 foreach (ProductSizes product in productModel.Sizes)
                 {
                     sizeButton = new Button();
+                    sizeButton.Size = new Size(40, 40);
                     sizeButton.Text = product.Size;
+   //                 sizeButton.GotFocus += SizeButton_GotFocus;
+   //                 sizeButton.LostFocus += SizeButton_LostFocus;
                     sizeButton.Name = product.productID.ToString();
                     this.sizeButton.Cursor = Cursors.Hand;
                     this.sizeButton.Click += new System.EventHandler(sizeButtons_Click);
@@ -79,16 +133,16 @@ namespace CatalogUserControl
             //Create a button for every color of the product 
             if (productModel.Colors.Count > 0)
             {
-  /*              foreach (ProductColors product in productModel.Colors)
-                {
-                    Color red = Color.FromName("Red");   
-                 //   Color mycolor = ColorTranslator.FromHtml(product.Color);
-                    var orderedColorList = productModel.Colors
-                    .OrderBy(color => mycolor.GetHue());
-                }
-  */
+                /*              foreach (ProductColors product in productModel.Colors)
+                              {
+                                  Color red = Color.FromName("Red");   
+                               //   Color mycolor = ColorTranslator.FromHtml(product.Color);
+                                  var orderedColorList = productModel.Colors
+                                  .OrderBy(color => mycolor.GetHue());
+                              }
+                */
 
-                    foreach (ProductColors product in productModel.Colors)
+                foreach (ProductColors product in productModel.Colors)
                 {
                     colorButton = new Button();
                     colorButton.Name = product.productID.ToString();
@@ -123,72 +177,28 @@ namespace CatalogUserControl
                 sizeFlowLayout.Controls.Add(sizeButton);
 
             }
-            }
-
-        //Method for the click Event on any size Button
-        private void sizeButtons_Click(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            String size;
-            Product auxProduct;
-
-            if (btn.Text != "Talla unica")
-                size = $" = '{btn.Text}'";
-            else
-                size = "is null";
-
-            auxProduct = da.getProductBySize(productModel.ProductModelID, language,size);
-
-            productIdLabel.Text = "PRODUCT ID : " + auxProduct.productID.ToString();
         }
 
-        //Method for the click Event on any color Button
-        private void colorButtons_Click(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            String color;
-            Product auxProduct;
+        //PENDING GET the diferents buttons(sizes and colors)  remain FOCUSED
+        /*
+                private void SizeButton_LostFocus(object sender, EventArgs e)
+                {
+                    Button btn = sender as Button;
 
-            if (btn.Text != "Sin color")
-                color = $" = '{btn.BackColor.Name}'";
-            else
-                color = "is null";
+                    btn.NotifyDefault(false);
+                    btn.Appareance.BorderSize = 1;
 
-            auxProduct = da.getProductByColor(productModel.ProductModelID, language, color);
-            productIdLabel.Text = "PRODUCT ID : " + auxProduct.productID.ToString();
-        }
+                }
 
-        public CatalogProductsUC()
-        {
-            InitializeComponent();
-        }
+                private void SizeButton_GotFocus(object sender, EventArgs e)
+                {
+                    Button btn = sender as Button;
 
-        private void CatalogProductsUC_Load(object sender, EventArgs e)
-        {
-//            LoadProduct();
-            configToolTips();
-        }
-
-        //Configure the ToolTips of the form, This form has three Tooltips
-        // on pictureBox, on any sizeButton and on any colorButton
-        public void configToolTips()
-        {
-            // Set up the delays for the ToolTip.
-            toolTip1.AutoPopDelay = 5000;
-            toolTip1.InitialDelay = 1000;
-            toolTip1.ReshowDelay = 500;
+                    btn.NotifyDefault(true);
+                    btn.Appareance.BorderSize = 10;
 
 
-            // Set up the ToolTip text for Controls that you want use it
-            toolTip1.SetToolTip(this.productPictureBox, "Click for more details");
-        }
-
-        //Method/Event to go the detailForm
-        private void productPictureBox_Click(object sender, EventArgs e)
-        {
-            detailFormProduct = da.getProduct(productModel.ProductModelID, language);
-            DetailForm detailForm = new DetailForm(detailFormProduct,productModel);
-            detailForm.ShowDialog();
-        }
+                }
+        */
     }
 }
